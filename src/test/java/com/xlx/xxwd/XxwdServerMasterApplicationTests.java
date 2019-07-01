@@ -1,4 +1,4 @@
-package com.xlx.xxwdservermaster;
+package com.xlx.xxwd;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

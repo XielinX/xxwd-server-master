@@ -1,13 +1,13 @@
-package com.xlx.xxwdservermaster;
+package com.xlx.xxwd;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class XxwdServerMasterApplication {
+public class Application {
 
   public static void main(String[] args) {
-    SpringApplication.run(XxwdServerMasterApplication.class, args);
+    SpringApplication.run(Application.class, args);
   }
 
 }
