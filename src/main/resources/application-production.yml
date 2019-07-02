@@ -1,0 +1,19 @@
+spring:
+  thymeleaf:
+    mode: HTML5
+logging:
+  level:
+    org:
+      springframework: error
+server:
+  port: ${PORT:5000}
+
+wechat:
+  appid: ${WECHAT_APPID}
+  secret: ${WECHAT_SECRET}
+
+db:
+  url: ${JDBC_DATABASE_URL}&useUnicode=true&characterEncoding=UTF-8
+  username: ${JDBC_DATABASE_USERNAME}
+  password: ${JDBC_DATABASE_PASSWORD}
+  driver: com.mysql.jdbc.Driver

@@ -1,0 +1,32 @@
+spring:
+  thymeleaf:
+    mode: HTML5
+logging:
+  level:
+    org:
+      springframework: error
+    com:
+      xlx:
+        xxwd:
+          dao: debug
+server:
+  port: ${port:8888}
+
+# 记得替换成你的id和secret
+wechat:
+  appid: wx8ba1fb7969983c6b
+  secret: xlx.2015354107
+
+# h2
+db:
+  url: jdbc:h2:~/jiuask
+  username: sa
+  password:123
+  driver: org.h2.Driver
+
+# mysql
+#db:
+#  url: jdbc:mysql://localhost:3306/jiuask?reconnect=true
+#  username: pig
+#  password: 123456
+#  driver: com.mysql.jdbc.Driver
