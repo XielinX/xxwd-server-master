@@ -1,0 +1,7 @@
+{
+  "name": "xxwd-server-master",
+  "description": "xxwd-server-master",
+  "addons": [
+    "cleardb:ignite"
+  ]
+}
