@@ -10,7 +10,9 @@ logging:
         xxwd:
           dao: debug
 server:
-  port: ${port:8888}
+  port: 8888
+
+ # port: ${port:8888}
 
 # 记得替换成你的id和secret
 wechat:
@@ -19,7 +21,7 @@ wechat:
 
 # h2
 db:
-  url: jdbc:h2:~/jiuask
+  url: jdbc:h2:~/xxwd
   username: sa
   password: 123
   driver: org.h2.Driver

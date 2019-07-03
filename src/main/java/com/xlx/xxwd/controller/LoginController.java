@@ -12,6 +12,7 @@ import com.xlx.xxwd.model.User;
 import com.xlx.xxwd.service.UserService;
 import com.xlx.xxwd.util.DigestUtil;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -74,4 +75,5 @@ public class LoginController {
       return ResultDTO.failed(ErrorCodeEnum.UNKNOWN_ERROR);
     }
   }
+
 }

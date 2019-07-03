@@ -6,7 +6,7 @@
 <generatorConfiguration>
     <!--这个是依赖的路径，记得替换成自己的-->
     <classPathEntry
-            location="/Users/codedrinker/.m2/repository/com/h2database/h2/1.4.196/h2-1.4.196.jar"/>
+            location="F:\Maven\repository\com\h2database\h2\1.4.196\h2-1.4.196.jar"/>
 
     <context id="table" targetRuntime="MyBatis3">
         <plugin type="org.mybatis.generator.plugins.UnmergeableXmlMappersPlugin"></plugin>
@@ -15,16 +15,16 @@
             <property name="suppressAllComments" value="true"></property>
         </commentGenerator>
         <jdbcConnection driverClass="org.h2.Driver"
-                        connectionURL="jdbc:h2:~/jiuask"
+                        connectionURL="jdbc:h2:~/xxwd"
                         userId="sa"
-                        password="sa">
+                        password="123">
         </jdbcConnection>
 
         <javaTypeResolver>
             <property name="forceBigDecimals" value="false"/>
         </javaTypeResolver>
 
-        <javaModelGenerator targetPackage="com.codedrinker.model"
+        <javaModelGenerator targetPackage="com.xlx.xxwd.model"
                             targetProject="src/main/java">
             <property name="enableSubPackages" value="true"/>
             <property name="trimStrings" value="true"/>
@@ -34,7 +34,7 @@
             <property name="enableSubPackages" value="true"/>
         </sqlMapGenerator>
         <!--生成Dao类存放位置-->
-        <javaClientGenerator type="xmlmapper" targetPackage="com.codedrinker.dao"
+        <javaClientGenerator type="xmlmapper" targetPackage="com.xlx.xxwd.dao"
                              targetProject="src/main/java">
             <property name="enableSubPackages" value="true"/>
         </javaClientGenerator>

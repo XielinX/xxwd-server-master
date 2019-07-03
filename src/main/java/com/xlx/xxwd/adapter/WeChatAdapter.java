@@ -10,6 +10,7 @@ import okhttp3.Response;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Service;
 
 import java.io.IOException;
 
@@ -18,13 +19,14 @@ import java.io.IOException;
  *
  * @author xielx on 2019/7/2
  */
+@Service
 public class WeChatAdapter {
 
   private static final Logger logger = LoggerFactory.getLogger(WeChatAdapter.class);
-  @Value("${weChat.appid}")
+  @Value("${wechat.appid}")
   private String appid;
 
-  @Value("${weChat.secret}")
+  @Value("${wechat.secret}")
   private String secret;
 
 
