@@ -1,6 +1,7 @@
 package com.xlx.xxwd.dto;
 
 import com.xlx.xxwd.exception.IErrorCode;
+import lombok.Data;
 import org.apache.commons.lang3.builder.ReflectionToStringBuilder;
 import org.apache.commons.lang3.builder.ToStringStyle;
 
@@ -9,6 +10,7 @@ import org.apache.commons.lang3.builder.ToStringStyle;
  *
  * @author xielx on 2019/7/2
  */
+@Data
 public class ResultDTO {
 
   private Integer code;

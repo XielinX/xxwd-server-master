@@ -40,6 +40,7 @@ public class WeChatAdapter {
     // %s格式化字符
     String url = "https://api.weixin.qq.com/sns/jscode2session?appid=%s&secret=%s&js_code=%s&grant_type=authorization_code";
 
+    //GET
     OkHttpClient okHttpClient = new OkHttpClient();
     Request request = new Request.Builder()
             .addHeader("content-type","application/json")
@@ -50,7 +51,7 @@ public class WeChatAdapter {
       Response response = okHttpClient.newCall(request).execute();
       if (response.isSuccessful()){
         //响应数据
-        String result = response.body().toString();
+        String result = response.body().string();
         SeesionDTO seesionDTO = JSON.parseObject(result,SeesionDTO.class);
         logger.info("jscode2session get url -> {},get info -> {}",String.format(url,appid,secret,code),JSON.toJSONString(seesionDTO));
         return seesionDTO;
