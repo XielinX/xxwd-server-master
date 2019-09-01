@@ -12,7 +12,6 @@ import com.xlx.xxwd.model.User;
 import com.xlx.xxwd.service.UserService;
 import com.xlx.xxwd.util.DigestUtil;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -46,7 +45,7 @@ public class LoginController {
     log.info("login request:[{}]", loginDTO);
     try {
 
-      //使用code调用微信API获取登录凭证,校验成功后的openid和session_key
+      //调用微信API接口(jscode2session)获取登录凭证,校验成功得到的openid和session_key
       SeesionDTO seesionDTO = weChatAdapter.jscode2session(loginDTO.getCode());
 
       log.info("login get session:[{}]", seesionDTO);
@@ -59,7 +58,7 @@ public class LoginController {
       User user = JSON.parseObject(loginDTO.getRawData(), User.class);
       user.setToken(token);
       user.setOpenid(seesionDTO.getOpenid());
-
+      user.setStatus(Boolean.TRUE);
       userService.insertOrUpdate(user);
 
       TokenDTO tokenDTO = new TokenDTO();

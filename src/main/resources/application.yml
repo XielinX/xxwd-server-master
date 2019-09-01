@@ -17,7 +17,7 @@ server:
 # 记得替换成你的id和secret
 wechat:
   appid: wx8ba1fb7969983c6b
-  secret: 95a0a9ac89d9cc3456935924cf04bf00
+  secret: a34b20cb32c76742fbd4dc3f1f71d642
 
 # h2
 db:

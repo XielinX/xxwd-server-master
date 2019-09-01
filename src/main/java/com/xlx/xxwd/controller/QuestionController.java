@@ -52,6 +52,7 @@ public class QuestionController {
                         @RequestParam(name = "size", defaultValue = "10") Integer size) {
     try {
       List<Question> questions = questionService.list(page, size);
+      log.info("问题数据:[{}]",questions);
       return ResultDTO.success(questions);
     } catch (Exception e) {
       log.error("QuestionController list error,[{}]", e);

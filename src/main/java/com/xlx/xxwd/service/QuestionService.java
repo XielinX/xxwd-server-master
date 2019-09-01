@@ -42,7 +42,7 @@ public class QuestionService {
   public List<Question> list(Integer page,Integer size){
     QuestionExample questionExample = new QuestionExample();
     questionExample.createCriteria().andStatusEqualTo(new Byte("1"));
-    questionExample.setOrderByClause("gmt_create desc,comment_count desc,like_count desc,view_count desc");
+    questionExample.setOrderByClause("gmt_create desc");
     int offSet = (page - 1) * size;
     return questionMapper.selectByExampleWithRowbounds(questionExample,new RowBounds(offSet,size));
   }
