@@ -1,8 +1,8 @@
 package com.xlx.xxwd.service;
 
 import com.xlx.xxwd.dao.UserMapper;
-import com.xlx.xxwd.model.User;
-import com.xlx.xxwd.model.UserExample;
+import com.xlx.xxwd.entity.User;
+import com.xlx.xxwd.entity.UserExample;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;

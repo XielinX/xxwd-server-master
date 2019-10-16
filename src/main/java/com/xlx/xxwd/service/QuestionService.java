@@ -1,8 +1,8 @@
 package com.xlx.xxwd.service;
 
 import com.xlx.xxwd.dao.QuestionMapper;
-import com.xlx.xxwd.model.Question;
-import com.xlx.xxwd.model.QuestionExample;
+import com.xlx.xxwd.entity.Question;
+import com.xlx.xxwd.entity.QuestionExample;
 import com.xlx.xxwd.session.SessionUtil;
 import org.apache.ibatis.session.RowBounds;
 import org.springframework.stereotype.Service;

@@ -1,7 +1,7 @@
 package com.xlx.xxwd.dao;
 
-import com.xlx.xxwd.model.User;
-import com.xlx.xxwd.model.UserExample;
+import com.xlx.xxwd.entity.User;
+import com.xlx.xxwd.entity.UserExample;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.session.RowBounds;
@@ -12,7 +12,12 @@ public interface UserMapper {
     int deleteByExample(UserExample example);
 
     int deleteByPrimaryKey(Integer id);
-
+    
+    /**
+     * 选择性插入
+     * @param record user
+     * @return int
+     */
     int insert(User record);
 
     int insertSelective(User record);

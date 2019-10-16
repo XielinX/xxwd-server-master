@@ -1,7 +1,7 @@
 package com.xlx.xxwd.dao;
 
-import com.xlx.xxwd.model.Question;
-import com.xlx.xxwd.model.QuestionExample;
+import com.xlx.xxwd.entity.Question;
+import com.xlx.xxwd.entity.QuestionExample;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.session.RowBounds;

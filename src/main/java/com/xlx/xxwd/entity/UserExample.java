@@ -1,4 +1,4 @@
-package com.xlx.xxwd.model;
+package com.xlx.xxwd.entity;
 
 import java.util.ArrayList;
 import java.util.List;

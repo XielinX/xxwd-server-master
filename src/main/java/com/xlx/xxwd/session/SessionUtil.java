@@ -1,6 +1,6 @@
 package com.xlx.xxwd.session;
 
-import com.xlx.xxwd.model.User;
+import com.xlx.xxwd.entity.User;
 
 /**
  * session工具类

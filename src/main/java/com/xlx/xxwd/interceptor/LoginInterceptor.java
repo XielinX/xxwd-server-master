@@ -3,7 +3,7 @@ package com.xlx.xxwd.interceptor;
 import com.alibaba.fastjson.JSON;
 import com.xlx.xxwd.dto.ResultDTO;
 import com.xlx.xxwd.exception.ErrorCodeEnum;
-import com.xlx.xxwd.model.User;
+import com.xlx.xxwd.entity.User;
 import com.xlx.xxwd.service.UserService;
 import com.xlx.xxwd.session.SessionUtil;
 import lombok.extern.slf4j.Slf4j;

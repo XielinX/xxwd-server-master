@@ -8,7 +8,7 @@ import com.xlx.xxwd.dto.SeesionDTO;
 import com.xlx.xxwd.dto.TokenDTO;
 import com.xlx.xxwd.exception.ErrorCodeEnum;
 import com.xlx.xxwd.exception.ErrorCodeException;
-import com.xlx.xxwd.model.User;
+import com.xlx.xxwd.entity.User;
 import com.xlx.xxwd.service.UserService;
 import com.xlx.xxwd.util.DigestUtil;
 import lombok.extern.slf4j.Slf4j;

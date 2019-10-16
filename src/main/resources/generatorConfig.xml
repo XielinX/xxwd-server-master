@@ -24,7 +24,7 @@
             <property name="forceBigDecimals" value="false"/>
         </javaTypeResolver>
 
-        <javaModelGenerator targetPackage="com.xlx.xxwd.model"
+        <javaModelGenerator targetPackage="com.xlx.xxwd.entity"
                             targetProject="src/main/java">
             <property name="enableSubPackages" value="true"/>
             <property name="trimStrings" value="true"/>

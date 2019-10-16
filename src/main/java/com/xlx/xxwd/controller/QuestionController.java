@@ -2,7 +2,7 @@ package com.xlx.xxwd.controller;
 
 import com.xlx.xxwd.dto.ResultDTO;
 import com.xlx.xxwd.exception.ErrorCodeEnum;
-import com.xlx.xxwd.model.Question;
+import com.xlx.xxwd.entity.Question;
 import com.xlx.xxwd.service.QuestionService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.*;
