@@ -8,6 +8,7 @@ import com.xlx.xxwd.service.UserService;
 import com.xlx.xxwd.session.SessionUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.servlet.HandlerInterceptor;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -26,7 +27,7 @@ import java.io.PrintWriter;
 @Slf4j
 public class LoginInterceptor implements HandlerInterceptor {
 
-  @Resource
+  @Autowired
   private  UserService userService;
 
   @Override

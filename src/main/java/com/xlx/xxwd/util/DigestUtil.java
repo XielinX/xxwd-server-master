@@ -5,6 +5,9 @@ import com.xlx.xxwd.exception.ErrorCodeException;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.codec.digest.DigestUtils;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * sha1加密
  *
@@ -22,6 +25,7 @@ public class DigestUtil {
    * @param signature
    */
   public static void checkDigest(String rawData, String sessionKey, String signature) {
+  
     log.info("rawData:{},sessionKey:{},signature:{}", rawData, sessionKey, signature);
     String sha1 = DigestUtils.sha1Hex((rawData + sessionKey).getBytes());
 

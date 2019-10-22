@@ -1,25 +1,46 @@
 package com.xlx.xxwd.entity;
 
+import org.apache.commons.lang3.builder.ReflectionToStringBuilder;
+import org.apache.commons.lang3.builder.ToStringStyle;
+
+import java.io.Serializable;
+
 /**
  * @author xielx on 2019/7/2
  */
-public class User {
-    /**主键*/
+public class User implements Serializable {
+    
+    /**
+     * 主键
+     */
     private Integer id;
     
-    /**openid*/
+    /**
+     * openid
+     */
     private String openid;
-    /**token*/
+    /**
+     * token
+     */
     private String token;
     
-    /**昵称*/
+    /**
+     * 昵称
+     */
     private String nickName;
     
-    /**头像url*/
+    /**
+     * 头像url
+     */
     private String avatarUrl;
-    /**性别*/
+    /**
+     * 性别
+     */
     private Byte gender;
     
+    /**
+     * 创建时间
+     */
     private Long gmtCreate;
     
     /**
@@ -27,7 +48,32 @@ public class User {
      */
     private Long gmtModified;
     
-    private Boolean status = Boolean.FALSE;
+    /**
+     *  状态
+     */
+    private Boolean status;
+    
+    
+    /*@Override
+    public String toString() {
+        return ReflectionToStringBuilder.toString(this, ToStringStyle.JSON_STYLE);
+    }
+    */
+    
+    @Override
+    public String toString() {
+        return "User{" +
+                       "id=" + id +
+                       ", openid='" + openid + '\'' +
+                       ", token='" + token + '\'' +
+                       ", nickName='" + nickName + '\'' +
+                       ", avatarUrl='" + avatarUrl + '\'' +
+                       ", gender=" + gender +
+                       ", gmtCreate=" + gmtCreate +
+                       ", gmtModified=" + gmtModified +
+                       ", status=" + status +
+                       '}';
+    }
     
     public Integer getId() {
         return id;
