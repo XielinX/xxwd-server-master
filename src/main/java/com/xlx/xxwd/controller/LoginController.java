@@ -53,7 +53,7 @@ public class LoginController {
       log.error("登录凭证校验异常: {}", e.getMessage());
       return ResultDTO.failed(e);
     } catch (Exception e) {
-      log.error("登录凭证校验异常: {}", e.getMessage());
+      log.error("其他异常: {}", e.getMessage());
       return ResultDTO.failed(ErrorCodeEnum.UNKNOWN_ERROR);
     }
   

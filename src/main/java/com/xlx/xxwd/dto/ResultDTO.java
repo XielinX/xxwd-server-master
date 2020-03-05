@@ -55,4 +55,5 @@ public class ResultDTO {
     public static  ResultDTO failed(IErrorCode iErrorCode){
         return new ResultDTO(iErrorCode.getCode(),iErrorCode.getMessage(),null);
     }
+    
 }

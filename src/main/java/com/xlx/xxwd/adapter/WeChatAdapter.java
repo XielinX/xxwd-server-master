@@ -60,7 +60,7 @@ public class WeChatAdapter {
         throw  new ErrorCodeException(ErrorCodeEnum.OBTAIN_OPEN_ID_FAILED);
       }
     } catch (IOException e) {
-      logger.error("jscode2session API 调用失败: {}",e);
+      logger.error("jscode2session API 调用失败: [{}],请检查网络是否正常",e.getMessage());
       throw  new ErrorCodeException(ErrorCodeEnum.OBTAIN_OPEN_ID_FAILED);
     }
   }
