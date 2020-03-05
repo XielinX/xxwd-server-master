@@ -31,11 +31,12 @@ public class QuestionController {
    */
   @RequestMapping(value = "/api/question", method = RequestMethod.POST)
   public ResultDTO createQuestion(@RequestBody Question question) {
+    log.info("新增问题数据:{}",question);
     try {
       questionService.createQuestion(question);
       return ResultDTO.success(null);
     } catch (Exception e) {
-      log.error("QuestionController createQuestion error,question:[{}]", question, e);
+      log.error("问题新增失败:{}",e.getMessage());
       return ResultDTO.failed(ErrorCodeEnum.UNKNOWN_ERROR);
     }
 
@@ -55,7 +56,7 @@ public class QuestionController {
       log.info("问题数据:[{}]",questions);
       return ResultDTO.success(questions);
     } catch (Exception e) {
-      log.error("QuestionController list error,[{}]", e);
+      log.error("分页获取问题数据失败:[{}]", e.getMessage());
       return ResultDTO.failed(ErrorCodeEnum.UNKNOWN_ERROR);
     }
 

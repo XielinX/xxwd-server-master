@@ -53,14 +53,14 @@ public class WeChatAdapter {
         //响应数据
         String result = response.body().string();
         SeesionDTO seesionDTO = JSON.parseObject(result,SeesionDTO.class);
-        logger.info("jscode2session get url -> {},get info -> {}",String.format(url,appid,secret,code),JSON.toJSONString(seesionDTO));
+        logger.info("响应数据:{}",JSON.toJSONString(seesionDTO));
         return seesionDTO;
       }else {
-        logger.info("jscode2session code []",code);
+        logger.info("响应失败:{}",response.message());
         throw  new ErrorCodeException(ErrorCodeEnum.OBTAIN_OPEN_ID_FAILED);
       }
     } catch (IOException e) {
-      logger.error("jscode2session authorized error: {}",code,e);
+      logger.error("jscode2session API 调用失败: {}",e);
       throw  new ErrorCodeException(ErrorCodeEnum.OBTAIN_OPEN_ID_FAILED);
     }
   }

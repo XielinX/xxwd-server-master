@@ -78,7 +78,7 @@
     STATUS
   </sql>
   <sql id="Blob_Column_List">
-    CONTENT
+    `CONTENT`
   </sql>
   <select id="selectByExampleWithBLOBs" parameterType="com.xlx.xxwd.entity.QuestionExample" resultMap="ResultMapWithBLOBs">
     select

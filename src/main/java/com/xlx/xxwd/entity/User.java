@@ -54,26 +54,12 @@ public class User implements Serializable {
     private Boolean status;
     
     
-    /*@Override
+    @Override
     public String toString() {
         return ReflectionToStringBuilder.toString(this, ToStringStyle.JSON_STYLE);
     }
-    */
     
-    @Override
-    public String toString() {
-        return "User{" +
-                       "id=" + id +
-                       ", openid='" + openid + '\'' +
-                       ", token='" + token + '\'' +
-                       ", nickName='" + nickName + '\'' +
-                       ", avatarUrl='" + avatarUrl + '\'' +
-                       ", gender=" + gender +
-                       ", gmtCreate=" + gmtCreate +
-                       ", gmtModified=" + gmtModified +
-                       ", status=" + status +
-                       '}';
-    }
+    
     
     public Integer getId() {
         return id;

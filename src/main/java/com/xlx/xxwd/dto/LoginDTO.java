@@ -3,7 +3,7 @@ package com.xlx.xxwd.dto;
 import lombok.Data;
 
 /**
- * login
+ * wx.login接口返回的数据信息
  *
  * @author xielx on 2019/7/2
  */

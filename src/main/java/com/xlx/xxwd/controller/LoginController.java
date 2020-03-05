@@ -42,37 +42,34 @@ public class LoginController {
    */
   @RequestMapping(value = "/api/login")
   public ResultDTO login(@RequestBody LoginDTO loginDTO) {
-    log.info("login request:[{}]", loginDTO);
+    log.info("微信端返回数据:[{}]", loginDTO);
+    SeesionDTO seesionDTO;
     try {
-
       //调用微信API接口(jscode2session)获取登录凭证,校验成功得到的openid和session_key
-      SeesionDTO seesionDTO = weChatAdapter.jscode2session(loginDTO.getCode());
-
-      log.info("login get session:[{}]", seesionDTO);
+       seesionDTO = weChatAdapter.jscode2session(loginDTO.getCode());
       //检验微信端传过来的用户信息是否合法
       DigestUtil.checkDigest(loginDTO.getRawData(), seesionDTO.getSessionKey(), loginDTO.getSignature());
-
-      //token,用于自定义登录态
-      String token = UUID.randomUUID().toString();
-      // 获取微信端的微信用户信息
-      User user = JSON.parseObject(loginDTO.getRawData(), User.class);
-      user.setToken(token);
-      user.setOpenid(seesionDTO.getOpenid());
-      user.setStatus(Boolean.TRUE);
-      userService.insertOrUpdate(user);
-
-      TokenDTO tokenDTO = new TokenDTO();
-      tokenDTO.setToken(token);
-
-      return ResultDTO.success(tokenDTO);
-
     } catch (ErrorCodeException e) {
-      log.error("login error,info: {}", loginDTO, e);
+      log.error("登录凭证校验异常: {}", e.getMessage());
       return ResultDTO.failed(e);
     } catch (Exception e) {
-      log.error("login error,info: {}", loginDTO, e);
+      log.error("登录凭证校验异常: {}", e.getMessage());
       return ResultDTO.failed(ErrorCodeEnum.UNKNOWN_ERROR);
     }
+  
+    //token,用于自定义登录态
+    String token = UUID.randomUUID().toString();
+    // 获取微信端的微信用户信息
+    User user = JSON.parseObject(loginDTO.getRawData(), User.class);
+    user.setToken(token);
+    user.setOpenid(seesionDTO.getOpenid());
+    user.setStatus(Boolean.TRUE);
+    userService.insertOrUpdate(user);
+  
+    TokenDTO tokenDTO = new TokenDTO();
+    tokenDTO.setToken(token);
+  
+    return ResultDTO.success(tokenDTO);
   }
 
 }
