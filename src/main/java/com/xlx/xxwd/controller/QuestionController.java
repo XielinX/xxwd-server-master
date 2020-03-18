@@ -53,7 +53,7 @@ public class QuestionController {
                         @RequestParam(name = "size", defaultValue = "10") Integer size) {
     try {
       List<Question> questions = questionService.list(page, size);
-      log.info("问题数据:[{}]",questions);
+      log.info("问题数据个数:[{}]",questions.size());
       return ResultDTO.success(questions);
     } catch (Exception e) {
       log.error("分页获取问题数据失败:[{}]", e.getMessage());
